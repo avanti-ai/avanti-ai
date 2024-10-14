@@ -1,16 +1,71 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300");
-body {
-		background: #000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+	max-width: 1500px;
+	font-size: 1.25rem;
 }
 
 header {
   font-size: 2.5rem;
+	margin-bottom: 40px;
 }
 
 footer {
@@ -22,8 +77,78 @@ footer {
 		font-weight: 300;
 		font-size: 3em;
 		margin: 0 auto;
-		display: inline;
-		margin-bottom: 0;
+		/* display: inline; */
+		text-align: center;
+		color: rgba(255, 255, 255, 0.3);
+		background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		-webkit-background-size: 250px 100%;
+		-moz-background-size: 250px 100%;
+		background-size: 250px 100%;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		background-clip: text;
+		-webkit-animation-name: shimmer;
+		-moz-animation-name: shimmer;
+		animation-name: shimmer;
+		-webkit-animation-duration: 4s;
+		-moz-animation-duration: 4s;
+		animation-duration: 4s;
+		-webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+		0% {
+				background-position: -250px 0;
+		}
+		50% {
+				background-position: 250px 0;
+		}
+		100% {
+				background-position: -250px 0;
+		}
+}
+
+@-webkit-keyframes shimmer {
+		0% {
+				background-position: -250px 0;
+		}
+		50% {
+				background-position: 250px 0;
+		}
+		100% {
+				background-position: -250px 0;
+		}
+}
+
+@-o-keyframes shimmer {
+		0% {
+				background-position: -250px 0;
+		}
+		50% {
+				background-position: 250px 0;
+		}
+		100% {
+				background-position: -250px 0;
+		}
+}
+
+@keyframes shimmer {
+		0% {
+				background-position: -250px 0;
+		}
+		50% {
+				background-position: 250px 0;
+		}
+		100% {
+				background-position: -250px 0;
+		}
 }
 
 p {
@@ -31,12 +156,10 @@ p {
 		font-weight: 300;
 		font-size: 1em;
 		color: rgba(255, 255, 255, 0.65);
-		width: 500px;
+		max-width: 600px;
 		text-align: justify;
 		line-height: 1.5em;
-		border-top: 1px dashed rgba(255, 255, 255, 0.2);
-		margin: 10px 0 0 5px;
-		padding-top: 10px;
+		margin-bottom: 15px;
 }
 
 p a {
@@ -46,6 +169,10 @@ p a {
 
 p a:visted {
 		color: #fff;
+}
+
+section {
+	margin-bottom: 30px;
 }
 
 .shimmer {
