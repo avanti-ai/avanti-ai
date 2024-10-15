@@ -158,6 +158,13 @@ p {
 		margin-bottom: 15px;
 }
 
+h2 {
+	font-family: "Lato";
+	font-weight: 300;
+	font-size: 1.4em;
+	color: rgba(255, 255, 255, 0.95);
+}
+
 p a {
 		text-decoration: none;
 		color: #fff;
